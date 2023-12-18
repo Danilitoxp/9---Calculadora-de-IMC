@@ -7,30 +7,32 @@
 :root {
     font-size: 62.5%;
 
-    --bg-box: #fff;
-    --bg-semi: #002E00;
-    --bg-default: #041300;
-    --tt-heading: #125200;
-    --tt-label: #00453a;
+    /* cores */
+    --tt-heading: #00453A;
+    
+    --tt-label: #00453A;
     --tt-input: #212529;
-    --ot-input: #041300;
+    --ot-input: #03ad00;
     --bd-input: rgba(73, 80, 87, 0.3);
     --tt-placeholder: rgba(73, 80, 87, 0.5);
-    --tt-button: #ffffff;
-    --bg-button: #125200;
-    --bg-error: #f03e3e;
-    --tt-error: #ffffff;
-    --bg-input: #dce2e9;
-    --bh-button-hover: #092b00;
-}
+    --bg-input: #DCE2E9;
+
+    --tt-button: white;
+    --bg-button: #029F00;
+    --bg-button-hover: #015300;
+
+    --bg-error: #F03E3E;
+    --tt-error: white;
+}   
 
 body {
-    background-color: var(--bg-default);
     font-family: 'Roboto', sans-serif;
+    background-color: #041300;
 }
 
 body, input, button {
     font-size: 1.6rem;
+    line-height: 2rem;
 }
 
 .container {
@@ -41,11 +43,11 @@ body, input, button {
 
 .card {
     padding: 4.8rem 6.4rem 6.4rem;
-    background: var(--bg-box);
+    background: white;
     max-width: 42.8rem;
     margin-inline: auto;
 
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 .2rem .4rem rgba(0,0,0,0.1);
     border-radius: .6rem;
 }
 
@@ -55,32 +57,32 @@ body, input, button {
     color: var(--tt-heading);
 }
 
-.container {
-    padding: 1.6rem;
+form  {
+    width: 30rem;
 }
 
 form h1 {
     margin-bottom: 3.2rem;
 }
 
-form input {
-    background: var(---bg-input);
-    width: 100%;
-    border: 1px solid var(--bd-input);
-    padding: 1.6rem;
-    border-radius: .4rem;
-}
-
 form label {
-    display: block;
     font-size: 1.4rem;
     line-height: 1.8rem;
     color: var(--tt-label);
     margin-bottom: .8rem;
+    display: block;
+}
+
+form input {
+    width: 100%;
+    border: 1px solid var(--bd-input);
+    background: var(--bg-input);
+    padding: 1.6rem;
+    border-radius: .4rem;
 }
 
 form input:focus {
-    outline: 1px solid var(--ot-input);
+    outline: 2px solid var(--ot-input);
 }
 
 form input::placeholder {
@@ -92,30 +94,32 @@ form input::placeholder {
 }
 
 form button {
+    margin-top: 3.2rem;
+    padding: 1.6rem;
+    width: 100%;
+
+    border-radius: .4rem;
+    border: none;
+    background-color: var(--bg-button);
+    color: var(--tt-button);
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .8rem;
-    margin-top: 3.2rem;
-    padding: 1.6rem;
-    width: 100%;
-    border: none;
 
-    background-color: var(--bg-button);
-    color: var(--tt-button);
-    border-radius: .4rem;
     font-weight: bold;
-    line-height: 2rem;
+
     cursor: pointer;
+
     transition: background .3s;
 }
 
 form button:hover {
-    background: var(--bh-button-hover);
+    background: var(--bg-button-hover);
 }
 
-/* modal  */
-
+/* modal */
 .modal-wrapper.open {
     opacity: 1;
     visibility: visible;
@@ -124,7 +128,7 @@ form button:hover {
 .modal-wrapper {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.70);
+    background: rgba(0, 0, 0, 0.7);
 
     display: grid;
     place-content: center;
@@ -142,18 +146,19 @@ form button:hover {
     border: none;
 
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1.6rem;
+    top: 1.6rem;
+    right: 1.6rem;
+
     cursor: pointer;
+
+    transition: transform .3s;
 }
 
 .modal button:hover {
-    transform: scale(1.1);    
+    transform: scale(1.1);
 }
 
 /* alert error */
-
 .alert-error.open {
     visibility: visible;
     opacity: 1;
@@ -162,6 +167,7 @@ form button:hover {
 
 .alert-error {
     position: absolute;
+    background-color: var(--bg-error);
     top: 0;
     left: 0;
     right: 0;
@@ -169,10 +175,9 @@ form button:hover {
     color: var(--tt-error);
     padding: .8rem 0;
     font-weight: bold;
-    background-color: var(--bg-error);
-    
+
     visibility: hidden;
     opacity: 0;
     transform: translateY(-30px);
-    transition: transform .7s;
+    transition: transform .5s;
 }
