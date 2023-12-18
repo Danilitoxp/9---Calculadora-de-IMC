@@ -14,7 +14,7 @@
 
 Este projeto foi idealizado com o objetivo de aprimorar minha expertise em HTML, CSS e JavaScript, através do suporte e recursos fornecidos pela plataforma Rockeseat.
 
-- [Acesse o projeto](https://vercel.com/danilitoxp/calculadora-imc-61ao/EgWXsbzaoPUdCPN2ioWK8U2ebDKU)
+- [Acesse o projeto](https://calculadora-imc-61ao-i5myt7d74-danilitoxp.vercel.app/)
 
 ## 🚀 Tecnologias
 
